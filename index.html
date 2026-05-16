@@ -152,6 +152,21 @@ nav{
     bottom:0;
     width:100%;
 }
+    .hamburger.active span:nth-child(1){
+    transform:rotate(45deg);
+    top:10px;
+    width:100%;
+}
+
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+    transform:rotate(-45deg);
+    bottom:11px;
+    width:100%;
+}
 
 /* HERO */
 
@@ -1089,11 +1104,13 @@ const menu = document.getElementById('menu');
 
 hamburger.addEventListener('click', () => {
     menu.classList.toggle('active');
+    hamburger.classList.toggle('active');
 });
 
 document.querySelectorAll('.menu a').forEach(link => {
     link.addEventListener('click', () => {
         menu.classList.remove('active');
+        hamburger.classList.remove('active');
     });
 });
 
