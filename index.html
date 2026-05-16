@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kadeřnictví ANGEL | Hair Salon Angel Šumperk</title>
+
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+:root{
+    --accent:#d7df23;
+    --black:#111;
+    --white:#fff;
+    --gray:#f4f4f4;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#fff;
+    color:#111;
+    overflow-x:hidden;
+    line-height:1.6;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px;
+}
+
+/* NAV */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:999;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(0,0,0,0.05);
+    transition:.3s;
+}
+
+.nav-inner{
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:'Oswald',sans-serif;
+    font-size:32px;
+    letter-spacing:2px;
+    font-weight:600;
+}
+
+.logo span{
+    color:var(--accent);
+}
+
+.logo img{
+    height:60px;
+    width:auto;
+    object-fit:contain;
+}
+
+.menu{
+    display:flex;
+    gap:35px;
+}
+
+.menu a{
+    font-size:14px;
+    text-transform:uppercase;
+    font-weight:600;
+    position:relative;
+}
+
+.menu a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:2px;
+    background:var(--accent);
+    transition:.3s;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+.hamburger{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    padding-top:100px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero h1{
+    font-family:'Oswald',sans-serif;
+    font-size:82px;
+    line-height:1;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+
+.hero h1 span{
+    color:var(--accent);
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:30px;
+    max-width:550px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 28px;
+    background:var(--accent);
+    color:#111;
+    font-weight:700;
+    text-transform:uppercase;
+    transition:.3s;
+    display:inline-block;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 30px rgba(215,223,35,0.3);
+}
+
+.btn-outline{
+    border:2px solid #111;
+    background:transparent;
+}
+
+.hero-img{
+    position:relative;
+}
+
+.hero-img img{
+    width:100%;
+    object-fit:cover;
+}
+
+/* SECTION */
+
+section{
+    padding:100px 0;
+}
+
+.section-title{
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-family:'Oswald',sans-serif;
+    font-size:54px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.section-title span{
+    color:var(--accent);
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* ABOUT */
+
+.about{
+    background:#f9f9f9;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about-image{
+    height:600px;
+    overflow:hidden;
+}
+
+.about-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.about-content p{
+    margin-bottom:20px;
+}
+
+/* SERVICES */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service-card{
+    padding:35px;
+    border:1px solid #eee;
+    transition:.3s;
+    background:#fff;
+}
+
+.service-card:hover{
+    border-color:var(--accent);
+    transform:translateY(-6px);
+}
+
+.service-card i{
+    font-size:42px;
+    color:var(--accent);
+    margin-bottom:20px;
+}
+
+.service-card h3{
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.service-icon{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+    margin-bottom:20px;
+}
+
+.hair-icon{
+    width:52px;
+    height:52px;
+    margin-bottom:10px;
+}
+
+/* GIFT */
+
+.gift{
+    background:#111;
+    color:#fff;
+}
+
+.gift-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.gift h2{
+    font-size:60px;
+    font-family:'Oswald',sans-serif;
+    margin-bottom:20px;
+}
+
+.gift span{
+    color:var(--accent);
+}
+
+.gift img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+}
+
+/* GALLERY */
+
+.gallery{
+    background:#f9f9f9;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.gallery-item{
+    overflow:hidden;
+}
+
+.gallery-item img{
+    height:350px;
+    width:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+/* PRICING */
+
+.price-wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.price-box{
+    border:1px solid #eee;
+    padding:40px;
+}
+
+.price-box h3{
+    margin-bottom:30px;
+    font-size:28px;
+    font-family:'Oswald',sans-serif;
+}
+
+.price-item{
+    display:flex;
+    justify-content:space-between;
+    padding:14px 0;
+    border-bottom:1px solid #eee;
+}
+
+/* REVIEWS */
+
+.reviews{
+    background:#f9f9f9;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.review-card{
+    background:#fff;
+    padding:35px;
+    border:1px solid #eee;
+    transition:.3s;
+}
+
+.review-card:hover{
+    transform:translateY(-5px);
+}
+
+.stars{
+    color:gold;
+    margin-bottom:15px;
+}
+
+/* CONTACT */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.contact-box{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    transition:.3s;
+    padding:10px 0;
+    border:1px solid transparent;
+}
+
+.contact-box:hover{
+    border-color:var(--accent);
+    background:#fafafa;
+    padding-left:12px;
+}
+
+.contact-box i{
+    color:var(--accent);
+    font-size:28px;
+    transition:.3s;
+}
+
+.contact-box:hover i{
+    color:#111;
+}
+
+.map iframe{
+    width:100%;
+    height:400px;
+    border:0;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:#fff;
+    padding:40px 0;
+}
+
+.footer-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-social{
+    display:flex;
+    gap:15px;
+}
+
+.footer-social a{
+    width:42px;
+    height:42px;
+    border:1px solid rgba(255,255,255,0.2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    background:var(--accent);
+    color:#111;
+}
+
+.counter{
+    color:var(--accent);
+    font-weight:700;
+}
+
+/* MOBILE CALL */
+
+.mobile-call{
+    display:none;
+}
+
+/* ANIM */
+
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+.hero-grid,
+.about-grid,
+.gift-grid,
+.contact-grid,
+.price-wrap{
+    grid-template-columns:1fr;
+}
+
+.services-grid,
+.review-grid,
+.gallery-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+.hero h1{
+    font-size:62px;
+}
+
+}
+
+@media(max-width:768px){
+
+.menu{
+    position:fixed;
+    top:80px;
+    right:-100%;
+    width:100%;
+    height:calc(100vh - 80px);
+    background:#fff;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transition:.4s;
+}
+
+.menu.active{
+    right:0;
+}
+
+.hamburger{
+    display:block;
+}
+
+.hero{
+    text-align:center;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.section-title h2{
+    font-size:42px;
+}
+
+.services-grid,
+.review-grid,
+.gallery-grid{
+    grid-template-columns:1fr;
+}
+
+.mobile-call{
+    display:flex;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:65px;
+    height:65px;
+    background:var(--accent);
+    color:#111;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    z-index:999;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container nav-inner">
+
+<div class="logo">
+    <img src="logo.png" alt="Hair Salon Angel">
+</div>
+
+<div class="menu" id="menu">
+<a href="#home">Domů</a>
+<a href="#about">O nás</a>
+<a href="#services">Služby</a>
+<a href="#gallery">Galerie</a>
+<a href="#pricing">Ceník</a>
+<a href="#contact">Kontakt</a>
+</div>
+
+<div class="hamburger" id="hamburger">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</div>
+</nav>
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+<div class="hero-content fade">
+<h1>Kadeřnictví <span>Angel</span></h1>
+
+<p>
+Profesionální kadeřnické služby v Šumperku. Moderní střihy, barvení, melíry, ombré a péče o Vaše vlasy.
+</p>
+
+<div class="hero-buttons">
+<a href="#contact" class="btn">
+Objednat se
+</a>
+
+<a href="#services" class="btn btn-outline">
+Naše služby
+</a>
+</div>
+</div>
+
+<div class="hero-img fade">
+<img src="plakat.jpg" alt="Hair Salon Angel">
+</div>
+
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="container">
+
+<div class="section-title fade">
+<h2>O <span>salonu</span></h2>
+<p>Hair Salon Angel v Šumperku</p>
+</div>
+
+<div class="about-grid">
+
+<div class="about-image fade">
+<img src="vlasy3.png" alt="Hair Salon Angel">
+</div>
+
+<div class="about-content fade">
+
+<p>
+V Kadeřnictví Hair Salon Angel v Šumperku na Slovanské 2 na Vás čekají profesionální kadeřnice.
+</p>
+
+<p>
+Jednoduše se uvolněte a vypněte. Společně s odborníky najdete přesně ten správný styl pro Vás.
+</p>
+
+<p>
+Můžete tak dokonale podtrhnout a zdůraznit všechny své přednosti.
+</p>
+
+<p>
+Používáme kvalitní značkové přípravky a sledujeme nové trendy módních účesů.
+</p>
+
+<a href="#contact" class="btn">
+Objednat se
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+
+<div class="section-title fade">
+<h2>Naše <span>služby</span></h2>
+<p>Kompletní péče o Vaše vlasy</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card fade">
+<i class="fa-solid fa-scissors"></i>
+<h3>Moderní střihy</h3>
+<p>Dámské, pánské i dětské stříhání podle nejnovějších trendů.</p>
+</div>
+
+<div class="service-card fade">
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+<h3>Barvení, melíry, ombré</h3>
+<p>Profesionální barvení různými technikami včetně OMBRÉ.</p>
+</div>
+
+<div class="service-card fade">
+<img src="hair-green.png" class="service-icon hair-icon" alt="">
+<h3>Prodlužování vlasů</h3>
+<p>Profesionální prodlužování vlasů pro dokonalý objem a délku.</p>
+</div>
+
+<div class="service-card fade">
+<i class="fa-solid fa-spa"></i>
+<h3>Regenerace</h3>
+<p>Masáž a regenerace vlasů pomocí kvalitní kosmetiky.</p>
+</div>
+
+<div class="service-card fade">
+<i class="fa-solid fa-crown"></i>
+<h3>Slavnostní účesy</h3>
+<p>Účesy pro běžné nošení i speciální příležitosti.</p>
+</div>
+
+<div class="service-card fade">
+<i class="fa-solid fa-bottle-droplet"></i>
+<h3>Vlasová kosmetika</h3>
+<p>Prodej profesionální vlasové kosmetiky přímo v salonu.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="gift">
+<div class="container">
+
+<div class="gift-grid">
+
+<div class="fade">
+<h2>Dárkové <span>poukazy</span></h2>
+
+<p>
+Potěšte své blízké stylovým dárkovým poukazem do Hair Salon Angel.
+Ideální dárek pro každou příležitost.
+</p>
+
+<br>
+
+<a href="#contact" class="btn">
+Objednat poukaz
+</a>
+
+</div>
+
+<div class="fade">
+<img src="voucher.png" alt="Dárkové poukazy">
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="gallery" id="gallery">
+
+<div class="container">
+
+<div class="section-title fade">
+<h2>Naše <span>práce</span></h2>
+<p>Ukázky účesů a proměn</p>
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item fade">
+<img src="hairvlasy1.jpg" alt="">
+</div>
+
+<div class="gallery-item fade">
+<img src="hairvlasy2.jpg" alt="">
+</div>
+
+<div class="gallery-item fade">
+<img src="hairvlasy3.jpg" alt="">
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="pricing">
+
+<div class="container">
+
+<div class="section-title fade">
+<h2>Ceník <span>služeb</span></h2>
+<p>Hair Salon Angel Šumperk</p>
+</div>
+
+<div class="price-wrap">
+
+<div class="price-box fade">
+
+<h3>Stříhání</h3>
+
+<div class="price-item">
+<span>Dámské</span>
+<span>165 – 220 Kč</span>
+</div>
+
+<div class="price-item">
+<span>Pánské</span>
+<span>165 – 220 Kč</span>
+</div>
+
+<div class="price-item">
+<span>Dětské</span>
+<span>145 Kč</span>
+</div>
+
+<div class="price-item">
+<span>Mytí + střih + styling krátké</span>
+<span>365 Kč</span>
+</div>
+
+<div class="price-item">
+<span>Polodlouhé vlasy</span>
+<span>435 Kč</span>
+</div>
+
+<div class="price-item">
+<span>Dlouhé vlasy</span>
+<span>555 Kč</span>
+</div>
+
+</div>
+
+<div class="price-box fade">
+
+<h3>Barvení & Melír</h3>
+
+<div class="price-item">
+<span>Barva krátké vlasy</span>
+<span>685 Kč</span>
+</div>
+
+<div class="price-item">
+<span>Polodlouhé vlasy</span>
+<span>795 Kč</span>
+</div>
+
+<div class="price-item">
+<span>Dlouhé vlasy</span>
+<span>od 1050 Kč</span>
+</div>
+
+<div class="price-item">
+<span>Melír krátké vlasy</span>
+<span>730 Kč</span>
+</div>
+
+<div class="price-item">
+<span>Polodlouhé vlasy</span>
+<span>855 Kč</span>
+</div>
+
+<div class="price-item">
+<span>Dlouhé vlasy</span>
+<span>od 960 Kč</span>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="reviews">
+
+<div class="container">
+
+<div class="section-title fade">
+<h2>Google <span>recenze</span></h2>
+<p>Co o nás říkají zákazníci</p>
+</div>
+
+<div class="review-grid">
+
+<div class="review-card fade">
+<div class="stars">★★★★★</div>
+<p>
+Super tým, doporučuji velmi příjemný a ochotný personál a umí vše.
+</p>
+<br>
+<strong>Eva H.</strong>
+</div>
+
+<div class="review-card fade">
+<div class="stars">★★★★★</div>
+<p>
+Jsem stálá zákaznice. Chodím sem ráda. S vlasama jsem maximálně spokojená.
+</p>
+<br>
+<strong>Andy C.</strong>
+</div>
+
+<div class="review-card fade">
+<div class="stars">★★★★★</div>
+<p>
+Byl jsem velmi spokojen s ostříháním a bonus dobrá cena.
+</p>
+<br>
+<strong>Adam A.</strong>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title fade">
+<h2>Kontaktujte <span>nás</span></h2>
+<p>Objednávky kdykoliv telefonicky</p>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-info fade">
+
+<div class="contact-box">
+<i class="fa-solid fa-phone"></i>
+<div>
+<h3>Telefon</h3>
+<a href="tel:+420725131315">+420 725 131 315</a>
+</div>
+</div>
+
+<div class="contact-box">
+<i class="fa-solid fa-location-dot"></i>
+<div>
+<h3>Adresa</h3>
+<a href="https://maps.app.goo.gl/BVHn2147zuREiA4R9" target="_blank">
+Slovanská 2, Šumperk
+</a>
+</div>
+</div>
+
+<div class="contact-box">
+<i class="fa-brands fa-facebook-f"></i>
+<div>
+<h3>Facebook</h3>
+<a href="https://www.facebook.com/kadernictvi.lenka.1/" target="_blank">
+Hair Salon Angel
+</a>
+</div>
+</div>
+
+<div class="contact-box">
+<i class="fa-solid fa-clock"></i>
+<div>
+<h3>Objednávky</h3>
+<p>Kdykoliv na jakýkoliv den v týdnu.</p>
+</div>
+</div>
+
+</div>
+
+<div class="map fade">
+
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2566.556783618654!2d16.969870075452338!3d49.963416122313134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47121a56c70587e5%3A0x3d6d2373ab34ae19!2sHair%20Salon%20Angel!5e0!3m2!1scs!2shr!4v1778940453534!5m2!1scs!2shr" 
+width="600" 
+height="450" 
+style="border:0;" 
+allowfullscreen="" 
+loading="lazy" 
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<p>© All Rights Reserved — Lenka Dvořáková</p>
+<p>IČO: 87040468</p>
+<p>Slovanská 260/1, 787 01 Šumperk</p>
+</div>
+
+<div class="footer-social">
+
+<a href="https://www.facebook.com/kadernictvi.lenka.1/" target="_blank">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="tel:+420725131315">
+<i class="fa-solid fa-phone"></i>
+</a>
+
+<a href="https://maps.app.goo.gl/BVHn2147zuREiA4R9" target="_blank">
+<i class="fa-solid fa-location-dot"></i>
+</a>
+
+</div>
+
+<div>
+<p class="counter">
+Návštěvnost: 12 548
+</p>
+
+<br>
+
+<p>
+Designed by
+<a href="https://www.zajait.cz" target="_blank" style="color:var(--accent);">
+ZajaIT
+</a>
+</p>
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<a href="tel:+420725131315" class="mobile-call">
+<i class="fa-solid fa-phone"></i>
+</a>
+
+<script>
+
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
+
+hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+
+document.querySelectorAll('.menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('active');
+    });
+});
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+},{
+    threshold:0.2
+});
+
+document.querySelectorAll('.fade').forEach(el=>{
+    observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
