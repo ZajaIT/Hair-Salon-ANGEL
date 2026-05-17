@@ -1260,36 +1260,30 @@ async src="//gc.zgo.at/count.js">
 
 <script>
 
-async function loadStats(){
+function updateCounters(){
 
-    try{
+    let total = localStorage.getItem('fakeTotalVisits');
 
-        const response = await fetch(
-            'https://hairsalonangel.goatcounter.com/counter/TOTAL.json'
-        );
-
-        const data = await response.json();
-
-        const total = data.count || 1;
-
-        const today = Math.max(1, Math.floor(total * 0.08));
-        const week = Math.max(today + 2, Math.floor(total * 0.35));
-
-        document.getElementById('today-counter').innerText = today;
-
-        document.getElementById('week-counter').innerText = week;
-
-        document.getElementById('total-counter').innerText = total;
-
-    }catch(error){
-
-        console.log('GoatCounter error:', error);
-
+    if(!total){
+        total = 1;
+    }else{
+        total = parseInt(total) + 1;
     }
+
+    localStorage.setItem('fakeTotalVisits', total);
+
+    const today = Math.max(1, Math.floor(total * 0.08));
+    const week = Math.max(today + 2, Math.floor(total * 0.35));
+
+    document.getElementById('today-counter').innerText = today;
+
+    document.getElementById('week-counter').innerText = week;
+
+    document.getElementById('total-counter').innerText = total;
 
 }
 
-loadStats();
+updateCounters();
 
 </script>
 
