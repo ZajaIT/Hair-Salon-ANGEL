@@ -1264,13 +1264,38 @@ document.querySelectorAll('.fade').forEach(el=>{
 
 <script>
 
-function random(min,max){
-    return Math.floor(Math.random()*(max-min+1))+min;
+async function loadToplistStats(){
+
+    try{
+
+        const response = await fetch(
+            'https://toplist.cz/count.asp?id=1841860&http=1&format=json'
+        );
+
+        const data = await response.json();
+
+        document.getElementById('today-counter').innerText =
+            data.today || 0;
+
+        document.getElementById('week-counter').innerText =
+            data.week || 0;
+
+        document.getElementById('total-counter').innerText =
+            data.total || 0;
+
+    }catch(error){
+
+        console.log('Toplist chyba:', error);
+
+        document.getElementById('today-counter').innerText = '-';
+        document.getElementById('week-counter').innerText = '-';
+        document.getElementById('total-counter').innerText = '-';
+
+    }
+
 }
 
-document.getElementById('today-counter').innerText = random(8,25);
-document.getElementById('week-counter').innerText = random(80,220);
-document.getElementById('total-counter').innerText = random(1200,4800);
+loadToplistStats();
 
 </script>
 
