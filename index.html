@@ -1272,8 +1272,13 @@ function updateCounters(){
 
     localStorage.setItem('fakeTotalVisits', total);
 
-    const today = Math.max(1, Math.floor(total * 0.08));
-    const week = Math.max(today + 2, Math.floor(total * 0.35));
+    let today = Math.max(1, Math.floor(total * 0.05));
+    let week = Math.max(today, Math.floor(total * 0.2));
+
+    if(total < 10){
+        today = 1;
+        week = total;
+    }
 
     document.getElementById('today-counter').innerText = today;
 
