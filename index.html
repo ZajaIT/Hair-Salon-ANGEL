@@ -480,6 +480,14 @@ section{
     transform:scale(1.03);
 }
 
+  @media (min-width:769px){
+    .transform-item:last-child:nth-child(odd){
+        grid-column:1 / -1;
+        width:calc(50% - 12.5px);
+        justify-self:center;
+    }
+}
+
 /* REVIEWS */
 
 .reviews{
